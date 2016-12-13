@@ -92,37 +92,42 @@ adjacencyMatrix.$on('decrementEdge', {
 
 dms.log('Decrement values of some edges')
 matrixPrinter(adjacencyMatrix.$on('getMatrix').adjMatrix);
+
+// get value of an edge
+dms.log('Value of edge from A --> B: ' + adjacencyMatrix.$on('getWeightFor', {'from': 'A', 'to': 'B'}))
 /***dms_snippet_END***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":65,"adjusted_line":26,"id":"NyGQEjXfsAiJWii","type":"log","body":"Adding elements to matrix","i":{"chapter":"0","element":"2","output":"0"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":65,"adjusted_line":26,"id":"SGYUmlzacZndoOp","type":"log","body":"Adding elements to matrix"}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":66,"adjusted_line":27,"id":"MTCQlzbNRBLRIIW","type":"log","body":"0 1 0 0 ","i":{"chapter":"0","element":"2","output":"1"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":66,"adjusted_line":27,"id":"nTLyITDuDWbbFbl","type":"log","body":"0 1 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":66,"adjusted_line":27,"id":"MFHvFUuhbHlamEo","type":"log","body":"0 0 2 0 ","i":{"chapter":"0","element":"2","output":"2"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":66,"adjusted_line":27,"id":"izwIyhXtnNpsqvt","type":"log","body":"0 0 2 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":66,"adjusted_line":27,"id":"QhqvSiHsajmCodc","type":"log","body":"0 3 0 0 ","i":{"chapter":"0","element":"2","output":"3"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":66,"adjusted_line":27,"id":"GmoTYyKBXCElFXU","type":"log","body":"0 3 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":66,"adjusted_line":27,"id":"LJclPcEjmlzJDhs","type":"log","body":"0 0 0 0 ","i":{"chapter":"0","element":"2","output":"4"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":66,"adjusted_line":27,"id":"oBFCwAJJXRsiDZg","type":"log","body":"0 0 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":79,"adjusted_line":40,"id":"NkAavZTUsqglZQm","type":"log","body":"Increment values of some edges","i":{"chapter":"0","element":"2","output":"5"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":79,"adjusted_line":40,"id":"uXwRgblBBhYsTQR","type":"log","body":"Increment values of some edges"}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":80,"adjusted_line":41,"id":"kDFHavsRCSiNsLL","type":"log","body":"0 2 0 0 ","i":{"chapter":"0","element":"2","output":"6"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":80,"adjusted_line":41,"id":"SnIydOMQTSGAaAK","type":"log","body":"0 2 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":80,"adjusted_line":41,"id":"QsTohVaYayUkOYA","type":"log","body":"0 0 3 0 ","i":{"chapter":"0","element":"2","output":"7"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":80,"adjusted_line":41,"id":"OlAFFCJbBwBAHTR","type":"log","body":"0 0 3 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":80,"adjusted_line":41,"id":"QEHBZWhXhDeAyfN","type":"log","body":"0 3 0 0 ","i":{"chapter":"0","element":"2","output":"8"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":80,"adjusted_line":41,"id":"crmmBJVJMBmHVdQ","type":"log","body":"0 3 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":80,"adjusted_line":41,"id":"rdbHipuZreFbsdR","type":"log","body":"0 0 0 0 ","i":{"chapter":"0","element":"2","output":"9"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":80,"adjusted_line":41,"id":"IXAIchhCDmVPCcH","type":"log","body":"0 0 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":93,"adjusted_line":54,"id":"gjajqAHlkUQlJmt","type":"log","body":"Decrement values of some edges","i":{"chapter":"0","element":"2","output":"10"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":93,"adjusted_line":54,"id":"GHXltYNmrpWjHQl","type":"log","body":"Decrement values of some edges"}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":94,"adjusted_line":55,"id":"pZMnMwuDYgMhJPh","type":"log","body":"0 1 0 0 ","i":{"chapter":"0","element":"2","output":"11"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":94,"adjusted_line":55,"id":"XidMcbutpvmlrev","type":"log","body":"0 1 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":94,"adjusted_line":55,"id":"EKJJDjrozgMZYtp","type":"log","body":"0 0 2 0 ","i":{"chapter":"0","element":"2","output":"12"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":94,"adjusted_line":55,"id":"WeEonIBycWdJXhe","type":"log","body":"0 0 2 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":94,"adjusted_line":55,"id":"yDnTkmJkxQaZgQj","type":"log","body":"0 3 0 0 ","i":{"chapter":"0","element":"2","output":"13"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":94,"adjusted_line":55,"id":"mfYoFCHWegWfmgG","type":"log","body":"0 3 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":94,"adjusted_line":55,"id":"moaqFDieyuhdDxN","type":"log","body":"0 0 0 0 ","i":{"chapter":"0","element":"2","output":"14"}}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":94,"adjusted_line":55,"id":"jcRjuHwBwYhILVc","type":"log","body":"0 0 0 0 "}***/
+
+/***dms_snippet_OUTPUT_JSON_2_{"line":97,"adjusted_line":58,"id":"YuZXKIMuNQcqHnD","type":"log","body":"Value of edge from A --> B: 1"}***/
 
 /***dms_text_START_3***
 Undirected graphs are also supported by specifying the `undirected: true` parameter in the config object. The supply will automatically handle ensuring that the graph remains symmetrics about the diagonal.
@@ -155,14 +160,19 @@ undirectedAdjacencyMatrix({
 
 dms.log('Adding elements to matrix. Notice the matrix is symmetric.')
 matrixPrinter(undirectedAdjacencyMatrix.$on('getMatrix').adjMatrix);
+
+// get value of an edge
+dms.log('Value of edge from C --> B: ' + undirectedAdjacencyMatrix.$on('getWeightFor', {'from': 'C', 'to': 'B'}))
 /***dms_snippet_END***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":156,"adjusted_line":25,"id":"cVajlQqZLFuqKlv","type":"log","body":"Adding elements to matrix. Notice the matrix is symmetric.","i":{"chapter":"0","element":"4","output":"0"}}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":161,"adjusted_line":25,"id":"fLEgEOeDyjAuGXl","type":"log","body":"Adding elements to matrix. Notice the matrix is symmetric."}***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":157,"adjusted_line":26,"id":"PCXelpcWfwWnLCP","type":"log","body":"0 1 0 0 ","i":{"chapter":"0","element":"4","output":"1"}}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":162,"adjusted_line":26,"id":"wFwzuWrLrpwkKAM","type":"log","body":"0 1 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":157,"adjusted_line":26,"id":"pHdndaTDAnMkljk","type":"log","body":"1 0 3 0 ","i":{"chapter":"0","element":"4","output":"2"}}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":162,"adjusted_line":26,"id":"vFConAUVVEfvlyu","type":"log","body":"1 0 3 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":157,"adjusted_line":26,"id":"DFWWnfUaprwAmfT","type":"log","body":"0 3 0 0 ","i":{"chapter":"0","element":"4","output":"3"}}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":162,"adjusted_line":26,"id":"grGvYUrJlARpSgn","type":"log","body":"0 3 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":157,"adjusted_line":26,"id":"TCUqVIzYQJXIArD","type":"log","body":"0 0 0 0 ","i":{"chapter":"0","element":"4","output":"4"}}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":162,"adjusted_line":26,"id":"TNNyXRrHEAhYrof","type":"log","body":"0 0 0 0 "}***/
+
+/***dms_snippet_OUTPUT_JSON_4_{"line":165,"adjusted_line":29,"id":"dbDjQKGMSvUNIcB","type":"log","body":"Value of edge from C --> B: 3"}***/

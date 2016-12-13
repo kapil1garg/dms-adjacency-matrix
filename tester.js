@@ -48,6 +48,8 @@ adjacencyMatrix.$on('decrementEdge', {
 });
 console.log(adjacencyMatrix.$on('getMatrix'));
 
+console.log(adjacencyMatrix.$on('getWeightFor', {'from': 'A', 'to': 'B'}));
+
 // test undirected graph
 console.log('\nTesting undirected graph');
 var undirectedAdjacencyMatrix = supply('adjacency-matrix', {
@@ -96,6 +98,8 @@ undirectedAdjacencyMatrix.$on('decrementEdge', {
     to: 'C'
 });
 console.log(undirectedAdjacencyMatrix.$on('getMatrix'));
+
+console.log(undirectedAdjacencyMatrix.$on('getWeightFor', {'from': 'A', 'to': 'B'}));
 
 // test errors
 var nonUniqueEdgesGraph = supply('adjacency-matrix', {

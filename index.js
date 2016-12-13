@@ -59,6 +59,9 @@ module.exports = {
         adjMatrix: $.matrix
       });
     },
+    getWeightFor: function($, data, config, callback) {
+      return callback(null, $.matrix[$.edges[data.from]][$.edges[data.to]]);
+    },
     incrementEdge: function($, data, config, callback) {
       if (data.value) {
         $.matrix[$.edges[data.from]][$.edges[data.to]] += data.value;
