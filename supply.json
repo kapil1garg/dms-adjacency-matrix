@@ -12,6 +12,7 @@
     "copyright": "Kapil Garg"
   },
   "public": true,
+  "thumbnail": "adj-matrix.png",
   "tags": [
     "graph",
     "adjacency",
