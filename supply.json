@@ -1,0 +1,20 @@
+{
+  "name": "adjacency-matrix",
+  "description": "Create and maintain edges in an adjacency matrix",
+  "version": "1.0.0",
+  "scope": "kapow",
+  "repository": "",
+  "author": "",
+  "script": "index.js",
+  "license": {
+    "type": "MIT",
+    "year": 2016,
+    "copyright": "copyright-holder-goes-here"
+  },
+  "public": true,
+  "tags": [],
+  "inputs": [],
+  "parameters": [],
+  "supplies": {},
+  "breadcrumbs": {}
+}
