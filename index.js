@@ -1,55 +1,95 @@
-/*
- *  All supplies must modules.export an object
- */
 module.exports = {
-
-  /*
-   *  $inject is an optional function for initializing persistent variables
-   *  and using other supplies within this supply.
-   */
   $inject: function(supply, config){
-    /*
-     * supply:    an instance of the @dms/supply package, used for loading nested supplies.
-     *            If a supply is loaded here, return it as an attribute to make 
-     *            it available in $main and any routes.
-     *
-     * config:    object containing parameter settings
-     *
-     */
+    var edges = {};
+    var matrix = [];
+    var initialized = false;
 
-    return;
+    return {
+      edges: edges,
+      matrix: matrix,
+      initialized: initialized
+    };
   },
 
-  /*
-   *  $main is the required function that will be called via a supply's default route.
-   *  The core of your supply logic should go here.
-   */
   $main: function($, data, config, callback){
-    /*
-     *  $:        an internal stateless storage object and holds any miners and
-     *            injected attributes from the $inject() function
-     *
-     *  data:     the incoming data as a JSON object
-     *
-     *  config:   an object containing parameter settings
-     *
-     *  callback: a function for completing the processing of this data point.
-     *            Use the first parameter for errors and the second as an object
-     *            for output data - callback(err, outputs)
-     */
+    // check if variables are initialized
+    if (!$.initialized) {
+      var numKeys = 0;
+      for (var currEdgeIndex in config.parameters.edgeNames) {
+        var currEdgeName = config.parameters.edgeNames[currEdgeIndex];
+        if ($.edges.hasOwnProperty(currEdgeName)) {
+          return callback('Edge names must be unique');
+        } else {
+          $.edges[currEdgeName] = numKeys;
+          numKeys++;
+        }
+      }
 
-    return callback(null, data);
+      // create matrix
+      $.matrix = new Array(numKeys);
+      for (var i in $.edges) {
+        var currRow = new Array(numKeys);
+        for (var j in $.edges) {
+          currRow[$.edges[j]] = 0;
+        }
+        $.matrix[$.edges[i]] = currRow;
+      }
+
+      // graph is now initialized
+      $.initialized = true;
+    }
+
+    // push new value to matrix
+    $.matrix[$.edges[data.from]][$.edges[data.to]] = data.value;
+    if (config.parameters.undirected) {
+      $.matrix[$.edges[data.to]][$.edges[data.from]] = data.value;
+    }
+
+    // return the newly modified matrix
+    var output = {
+      adjMatrix: $.matrix
+    };
+
+    return callback(null, output);
   },
 
-  /*
-   *  $on is an optional object that creates alternate routes for this supply.
-   *  This is often useful for data coming from different sources or for different purposes.
-   */
   $on: {
-    route_name: function($, data, config, callback){
-      // TODO: write endpoint logic
+    getMatrix: function($, data, config, callback){
+      return callback(null, {
+        adjMatrix: $.matrix
+      });
+    },
+    incrementEdge: function($, data, config, callback) {
+      if (data.value) {
+        $.matrix[$.edges[data.from]][$.edges[data.to]] += data.value;
+      } else {
+        $.matrix[$.edges[data.from]][$.edges[data.to]]++;
+      }
 
-      return callback(null, data);
+      // set value for symmetric graphs on opposite of diagonal
+      if (config.parameters.undirected) {
+        $.matrix[$.edges[data.to]][$.edges[data.from]] = $.matrix[$.edges[data.from]][$.edges[data.to]];
+      }
+
+      return callback(null, {
+        adjMatrix: $.matrix
+      });
+    },
+    decrementEdge: function($, data, config, callback) {
+      if (data.value) {
+        $.matrix[$.edges[data.from]][$.edges[data.to]] -= data.value;
+      } else {
+        $.matrix[$.edges[data.from]][$.edges[data.to]]--;
+      }
+
+      // set value for symmetric graphs on opposite of diagonal
+      if (config.parameters.undirected) {
+        $.matrix[$.edges[data.to]][$.edges[data.from]] = $.matrix[$.edges[data.from]][$.edges[data.to]];
+      }
+
+      return callback(null, {
+        adjMatrix: $.matrix
+      });
     }
   }
 };

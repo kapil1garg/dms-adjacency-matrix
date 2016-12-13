@@ -1,0 +1,19 @@
+{
+  "name": "adjacency-matrix",
+  "version": "1.0.0",
+  "description": "Create and maintain edges in an adjacency matrix",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kapil1garg/dms-adjacency-matrix.git"
+  },
+  "author": "Kapil Garg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kapil1garg/dms-adjacency-matrix/issues"
+  },
+  "homepage": "https://github.com/kapil1garg/dms-adjacency-matrix#readme"
+}

@@ -3,18 +3,50 @@
   "description": "Create and maintain edges in an adjacency matrix",
   "version": "1.0.0",
   "scope": "kapow",
-  "repository": "",
-  "author": "",
+  "repository": "https://github.com/kapil1garg/dms-adjacency-matrix",
+  "author": "kapow",
   "script": "index.js",
   "license": {
     "type": "MIT",
     "year": 2016,
-    "copyright": "copyright-holder-goes-here"
+    "copyright": "Kapil Garg"
   },
   "public": true,
-  "tags": [],
-  "inputs": [],
-  "parameters": [],
+  "tags": [
+    "graph",
+    "adjacency",
+    "matrix"
+  ],
+  "inputs": [
+    {
+      "name": "to",
+      "type": "string",
+      "description": "Key for start of edge."
+    },
+    {
+      "name": "from",
+      "type": "string",
+      "description": "Key for end of edge."
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "description": "Numeric value to assign/increment/decrement to  edge (from, to)."
+    }
+  ],
+  "parameters": [
+    {
+      "name": "edgeNames",
+      "type": "array",
+      "description": "Names of edge endpoints. Each must be unique in the array."
+    },
+    {
+      "name": "undirected",
+      "type": "boolean",
+      "default": false,
+      "description": "Boolean for if graph is an undirected graph."
+    }
+  ],
   "supplies": {},
   "breadcrumbs": {}
 }
