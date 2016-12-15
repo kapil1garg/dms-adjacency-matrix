@@ -37,11 +37,14 @@ var matrixPrinter = function (matrix) {
 /***dms_snippet_MINIMIZED_1***/
 
 /***dms_snippet_START_2***/
+// create and initialize matrix
 var adjacencyMatrix = supply('adjacency-matrix', {
     parameters: {
-        edgeNames: ['A', 'B', 'C', 'D']
+        nodeNames: ['A', 'B', 'C', 'D']
     }
 });
+
+adjacencyMatrix.$on('initialize');
 
 // add some edges 
 adjacencyMatrix({
@@ -97,49 +100,52 @@ matrixPrinter(adjacencyMatrix.$on('getMatrix').adjMatrix);
 dms.log('Value of edge from A --> B: ' + adjacencyMatrix.$on('getWeightFor', {'from': 'A', 'to': 'B'}))
 /***dms_snippet_END***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":65,"adjusted_line":26,"id":"SGYUmlzacZndoOp","type":"log","body":"Adding elements to matrix"}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":68,"adjusted_line":29,"id":"eRqKpicWyERCIVB","type":"log","body":"Adding elements to matrix"}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":66,"adjusted_line":27,"id":"nTLyITDuDWbbFbl","type":"log","body":"0 1 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":69,"adjusted_line":30,"id":"JzopnJYtlxzKHDq","type":"log","body":"0 1 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":66,"adjusted_line":27,"id":"izwIyhXtnNpsqvt","type":"log","body":"0 0 2 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":69,"adjusted_line":30,"id":"qaoFWfaviQPwQbz","type":"log","body":"0 0 2 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":66,"adjusted_line":27,"id":"GmoTYyKBXCElFXU","type":"log","body":"0 3 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":69,"adjusted_line":30,"id":"ldKdEoJPVUCRIoD","type":"log","body":"0 3 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":66,"adjusted_line":27,"id":"oBFCwAJJXRsiDZg","type":"log","body":"0 0 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":69,"adjusted_line":30,"id":"XJyBAskJzYOPHoL","type":"log","body":"0 0 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":79,"adjusted_line":40,"id":"uXwRgblBBhYsTQR","type":"log","body":"Increment values of some edges"}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":82,"adjusted_line":43,"id":"UfUcoehEQcAezXO","type":"log","body":"Increment values of some edges"}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":80,"adjusted_line":41,"id":"SnIydOMQTSGAaAK","type":"log","body":"0 2 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":83,"adjusted_line":44,"id":"iVmXeBMQVhjeLzs","type":"log","body":"0 2 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":80,"adjusted_line":41,"id":"OlAFFCJbBwBAHTR","type":"log","body":"0 0 3 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":83,"adjusted_line":44,"id":"jOSYWnkOeTGkFUn","type":"log","body":"0 0 3 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":80,"adjusted_line":41,"id":"crmmBJVJMBmHVdQ","type":"log","body":"0 3 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":83,"adjusted_line":44,"id":"fZhFsJEYtYUpqtD","type":"log","body":"0 3 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":80,"adjusted_line":41,"id":"IXAIchhCDmVPCcH","type":"log","body":"0 0 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":83,"adjusted_line":44,"id":"pSgeJNrpejbShYv","type":"log","body":"0 0 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":93,"adjusted_line":54,"id":"GHXltYNmrpWjHQl","type":"log","body":"Decrement values of some edges"}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":96,"adjusted_line":57,"id":"NPeVxjrlGxlgWHf","type":"log","body":"Decrement values of some edges"}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":94,"adjusted_line":55,"id":"XidMcbutpvmlrev","type":"log","body":"0 1 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":97,"adjusted_line":58,"id":"vsiOKTRugvghlDB","type":"log","body":"0 1 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":94,"adjusted_line":55,"id":"WeEonIBycWdJXhe","type":"log","body":"0 0 2 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":97,"adjusted_line":58,"id":"BwZuinaOkpLTEGB","type":"log","body":"0 0 2 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":94,"adjusted_line":55,"id":"mfYoFCHWegWfmgG","type":"log","body":"0 3 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":97,"adjusted_line":58,"id":"SrbfzFQfAJeFcDA","type":"log","body":"0 3 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":94,"adjusted_line":55,"id":"jcRjuHwBwYhILVc","type":"log","body":"0 0 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":97,"adjusted_line":58,"id":"XqYzXfgfIIhoWqH","type":"log","body":"0 0 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":97,"adjusted_line":58,"id":"YuZXKIMuNQcqHnD","type":"log","body":"Value of edge from A --> B: 1"}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":100,"adjusted_line":61,"id":"HbtkPCeAZfUMjsE","type":"log","body":"Value of edge from A --> B: 1"}***/
 
 /***dms_text_START_3***
 Undirected graphs are also supported by specifying the `undirected: true` parameter in the config object. The supply will automatically handle ensuring that the graph remains symmetrics about the diagonal.
 ***dms_text_END***/
 
 /***dms_snippet_START_4***/
+// create and initialize matrix
 var undirectedAdjacencyMatrix = supply('adjacency-matrix', {
     parameters: {
-        edgeNames: ['A', 'B', 'C', 'D'],
+        nodeNames: ['A', 'B', 'C', 'D'],
         undirected: true
     }
 });
+
+undirectedAdjacencyMatrix.$on('initialize');
 
 // add some edges
 undirectedAdjacencyMatrix({
@@ -165,14 +171,14 @@ matrixPrinter(undirectedAdjacencyMatrix.$on('getMatrix').adjMatrix);
 dms.log('Value of edge from C --> B: ' + undirectedAdjacencyMatrix.$on('getWeightFor', {'from': 'C', 'to': 'B'}))
 /***dms_snippet_END***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":161,"adjusted_line":25,"id":"fLEgEOeDyjAuGXl","type":"log","body":"Adding elements to matrix. Notice the matrix is symmetric."}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":167,"adjusted_line":28,"id":"HwoZQKEuIBJZXVO","type":"log","body":"Adding elements to matrix. Notice the matrix is symmetric."}***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":162,"adjusted_line":26,"id":"wFwzuWrLrpwkKAM","type":"log","body":"0 1 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":168,"adjusted_line":29,"id":"IjjoGJSPCfgkEqE","type":"log","body":"0 1 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":162,"adjusted_line":26,"id":"vFConAUVVEfvlyu","type":"log","body":"1 0 3 0 "}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":168,"adjusted_line":29,"id":"JFWLsnXbuKyttZN","type":"log","body":"1 0 3 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":162,"adjusted_line":26,"id":"grGvYUrJlARpSgn","type":"log","body":"0 3 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":168,"adjusted_line":29,"id":"SVauhJvfloDsxaU","type":"log","body":"0 3 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":162,"adjusted_line":26,"id":"TNNyXRrHEAhYrof","type":"log","body":"0 0 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":168,"adjusted_line":29,"id":"EbfjoFnJZdKBxsY","type":"log","body":"0 0 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":165,"adjusted_line":29,"id":"dbDjQKGMSvUNIcB","type":"log","body":"Value of edge from C --> B: 3"}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":171,"adjusted_line":32,"id":"fPvtmkqeVwzTQtI","type":"log","body":"Value of edge from C --> B: 3"}***/

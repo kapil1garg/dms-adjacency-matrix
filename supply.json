@@ -37,9 +37,9 @@
   ],
   "parameters": [
     {
-      "name": "edgeNames",
+      "name": "nodeNames",
       "type": "array",
-      "description": "Names of edge endpoints. Each must be unique in the array."
+      "description": "Names of nodes in graph, which correspond to edge endpoints. Each must be unique in the array."
     },
     {
       "name": "undirected",

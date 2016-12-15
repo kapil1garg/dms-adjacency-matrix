@@ -4,9 +4,11 @@ var supply = require('@dms/io');
 console.log('Testing directed graph');
 var adjacencyMatrix = supply('adjacency-matrix', {
     parameters: {
-        edgeNames: ['A', 'B', 'C', 'D']
+        nodeNames: ['A', 'B', 'C', 'D']
     }
 });
+
+adjacencyMatrix.$on('initialize');
 
 // add some edges
 adjacencyMatrix({
@@ -54,10 +56,12 @@ console.log(adjacencyMatrix.$on('getWeightFor', {'from': 'A', 'to': 'B'}));
 console.log('\nTesting undirected graph');
 var undirectedAdjacencyMatrix = supply('adjacency-matrix', {
     parameters: {
-        edgeNames: ['A', 'B', 'C', 'D'],
+        nodeNames: ['A', 'B', 'C', 'D'],
         undirected: true
     }
 });
+
+undirectedAdjacencyMatrix.$on('initialize');
 
 // add some edges
 undirectedAdjacencyMatrix({
@@ -104,12 +108,12 @@ console.log(undirectedAdjacencyMatrix.$on('getWeightFor', {'from': 'A', 'to': 'B
 // test errors
 var nonUniqueEdgesGraph = supply('adjacency-matrix', {
     parameters: {
-        edgeNames: ['A', 'B', 'B', 'D']
+        nodeNames: ['A', 'B', 'B', 'D']
     }
 });
 
-nonUniqueEdgesGraph({
-    from: 'A',
-    to: 'B',
-    value: 1
-});
+nonUniqueEdgesGraph.$on('initialize', function (err, res) {
+        if (err) {
+            console.log('Error!', err);
+        }
+    });
