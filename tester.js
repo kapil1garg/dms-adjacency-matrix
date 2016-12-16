@@ -105,7 +105,29 @@ console.log(undirectedAdjacencyMatrix.$on('getMatrix'));
 
 console.log(undirectedAdjacencyMatrix.$on('getWeightFor', {'from': 'A', 'to': 'B'}));
 
+// test pre-initialized matrix
+console.log('\nTesting pre-initialized matrix');
+var preInitMatrix = supply('adjacency-matrix', {
+    parameters: {
+        nodeNames: ['A', 'B', 'C', 'D'],
+        initializedMatrix: [[ 0, 2, 0, 0 ], [ 0, 0, 3, 0 ], [ 0, 3, 0, 0 ], [ 0, 0, 0, 0 ]]
+    }
+});
+preInitMatrix.$on('initialize');
+console.log(preInitMatrix.$on('getMatrix'));
+
+var preInitMatrixUndirected = supply('adjacency-matrix', {
+    parameters: {
+        nodeNames: ['A', 'B', 'C', 'D'],
+        initializedMatrix: [[ 0, 1, 0, 0 ], [ 1, 0, 3, 0 ], [ 0, 3, 0, 0 ], [ 0, 0, 0, 0 ]],
+        undirected: true
+    }
+});
+preInitMatrixUndirected.$on('initialize');
+console.log(preInitMatrixUndirected.$on('getMatrix'));
+
 // test errors
+console.log('\nTesting errors');
 var nonUniqueEdgesGraph = supply('adjacency-matrix', {
     parameters: {
         nodeNames: ['A', 'B', 'B', 'D']
@@ -113,7 +135,33 @@ var nonUniqueEdgesGraph = supply('adjacency-matrix', {
 });
 
 nonUniqueEdgesGraph.$on('initialize', function (err, res) {
-        if (err) {
-            console.log('Error!', err);
-        }
-    });
+    if (err) {
+        console.log('Error!', err);
+    }
+});
+
+var invalidMatrixSize = supply('adjacency-matrix', {
+    parameters: {
+        nodeNames: ['A', 'B'],
+        initializedMatrix: [[ 0, 2, 0, 0 ], [ 0, 0, 3, 0 ], [ 0, 3, 0, 0 ], [ 0, 0, 0, 0 ]]
+    }
+});
+invalidMatrixSize.$on('initialize', function (err, res) {
+    if (err) {
+        console.log('Error!', err);
+    }
+});
+
+var nonSymmetric = supply('adjacency-matrix', {
+    parameters: {
+        nodeNames: ['A', 'B', 'C', 'D'],
+        initializedMatrix: [[ 0, 2, 0, 0 ], [ 0, 0, 3, 0 ], [ 0, 3, 0, 0 ], [ 0, 0, 0, 0 ]],
+        undirected: true
+    }
+});
+
+nonSymmetric.$on('initialize', function (err, res) {
+    if (err) {
+        console.log('Error!', err);
+    }
+});

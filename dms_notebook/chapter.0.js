@@ -31,7 +31,7 @@ var matrixPrinter = function (matrix) {
     }
     dms.log(outputString) 
   }
-}
+};
 /***dms_snippet_END***/
 
 /***dms_snippet_MINIMIZED_1***/
@@ -65,7 +65,7 @@ adjacencyMatrix({
     value: 3
 });
 
-dms.log('Adding elements to matrix')
+dms.log('Adding elements to matrix');
 matrixPrinter(adjacencyMatrix.$on('getMatrix').adjMatrix);
 
 // increment some edges 
@@ -79,7 +79,7 @@ adjacencyMatrix.$on('incrementEdge', {
     to: 'C'
 });
 
-dms.log('Increment values of some edges')
+dms.log('Increment values of some edges');
 matrixPrinter(adjacencyMatrix.$on('getMatrix').adjMatrix);
 
 // decrement some edges
@@ -93,44 +93,44 @@ adjacencyMatrix.$on('decrementEdge', {
     to: 'C'
 });
 
-dms.log('Decrement values of some edges')
+dms.log('Decrement values of some edges');
 matrixPrinter(adjacencyMatrix.$on('getMatrix').adjMatrix);
 
 // get value of an edge
-dms.log('Value of edge from A --> B: ' + adjacencyMatrix.$on('getWeightFor', {'from': 'A', 'to': 'B'}))
+dms.log('Value of edge from A --> B: ' + adjacencyMatrix.$on('getWeightFor', {'from': 'A', 'to': 'B'}));
 /***dms_snippet_END***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":68,"adjusted_line":29,"id":"eRqKpicWyERCIVB","type":"log","body":"Adding elements to matrix"}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":68,"adjusted_line":29,"id":"VZcyULQWXQGtyLt","type":"log","body":"Adding elements to matrix"}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":69,"adjusted_line":30,"id":"JzopnJYtlxzKHDq","type":"log","body":"0 1 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":69,"adjusted_line":30,"id":"kuciBTFceSpWqSu","type":"log","body":"0 1 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":69,"adjusted_line":30,"id":"qaoFWfaviQPwQbz","type":"log","body":"0 0 2 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":69,"adjusted_line":30,"id":"jmDAKAzuaxdYzFV","type":"log","body":"0 0 2 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":69,"adjusted_line":30,"id":"ldKdEoJPVUCRIoD","type":"log","body":"0 3 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":69,"adjusted_line":30,"id":"jiSPanZugeXAuOy","type":"log","body":"0 3 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":69,"adjusted_line":30,"id":"XJyBAskJzYOPHoL","type":"log","body":"0 0 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":69,"adjusted_line":30,"id":"glKSHiklxYYRJxa","type":"log","body":"0 0 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":82,"adjusted_line":43,"id":"UfUcoehEQcAezXO","type":"log","body":"Increment values of some edges"}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":82,"adjusted_line":43,"id":"qieCwoPiyQOJUdh","type":"log","body":"Increment values of some edges"}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":83,"adjusted_line":44,"id":"iVmXeBMQVhjeLzs","type":"log","body":"0 2 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":83,"adjusted_line":44,"id":"AgJEpNfyCLAeqsw","type":"log","body":"0 2 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":83,"adjusted_line":44,"id":"jOSYWnkOeTGkFUn","type":"log","body":"0 0 3 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":83,"adjusted_line":44,"id":"oqpacipNsTSbbKg","type":"log","body":"0 0 3 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":83,"adjusted_line":44,"id":"fZhFsJEYtYUpqtD","type":"log","body":"0 3 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":83,"adjusted_line":44,"id":"jDcjHYESvrqrByw","type":"log","body":"0 3 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":83,"adjusted_line":44,"id":"pSgeJNrpejbShYv","type":"log","body":"0 0 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":83,"adjusted_line":44,"id":"mqUQUbcZkFYqIBa","type":"log","body":"0 0 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":96,"adjusted_line":57,"id":"NPeVxjrlGxlgWHf","type":"log","body":"Decrement values of some edges"}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":96,"adjusted_line":57,"id":"TKENpDjKvEDRGIC","type":"log","body":"Decrement values of some edges"}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":97,"adjusted_line":58,"id":"vsiOKTRugvghlDB","type":"log","body":"0 1 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":97,"adjusted_line":58,"id":"RxfQMCJaTXmGKPE","type":"log","body":"0 1 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":97,"adjusted_line":58,"id":"BwZuinaOkpLTEGB","type":"log","body":"0 0 2 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":97,"adjusted_line":58,"id":"WlyzfVJhiIiRxON","type":"log","body":"0 0 2 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":97,"adjusted_line":58,"id":"SrbfzFQfAJeFcDA","type":"log","body":"0 3 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":97,"adjusted_line":58,"id":"CgjsBLLaEQAqpIh","type":"log","body":"0 3 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":97,"adjusted_line":58,"id":"XqYzXfgfIIhoWqH","type":"log","body":"0 0 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":97,"adjusted_line":58,"id":"CZHHRkNlYeimBgW","type":"log","body":"0 0 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_2_{"line":100,"adjusted_line":61,"id":"HbtkPCeAZfUMjsE","type":"log","body":"Value of edge from A --> B: 1"}***/
+/***dms_snippet_OUTPUT_JSON_2_{"line":100,"adjusted_line":61,"id":"gZxlyhTZPmDPAvG","type":"log","body":"Value of edge from A --> B: 1"}***/
 
 /***dms_text_START_3***
 Undirected graphs are also supported by specifying the `undirected: true` parameter in the config object. The supply will automatically handle ensuring that the graph remains symmetrics about the diagonal.
@@ -164,21 +164,52 @@ undirectedAdjacencyMatrix({
     value: 3
 });
 
-dms.log('Adding elements to matrix. Notice the matrix is symmetric.')
+dms.log('Adding elements to matrix. Notice the matrix is symmetric.');
 matrixPrinter(undirectedAdjacencyMatrix.$on('getMatrix').adjMatrix);
 
 // get value of an edge
-dms.log('Value of edge from C --> B: ' + undirectedAdjacencyMatrix.$on('getWeightFor', {'from': 'C', 'to': 'B'}))
+dms.log('Value of edge from C --> B: ' + undirectedAdjacencyMatrix.$on('getWeightFor', {'from': 'C', 'to': 'B'}));
 /***dms_snippet_END***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":167,"adjusted_line":28,"id":"HwoZQKEuIBJZXVO","type":"log","body":"Adding elements to matrix. Notice the matrix is symmetric."}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":167,"adjusted_line":28,"id":"xmnusDimJyRzdGL","type":"log","body":"Adding elements to matrix. Notice the matrix is symmetric."}***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":168,"adjusted_line":29,"id":"IjjoGJSPCfgkEqE","type":"log","body":"0 1 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":168,"adjusted_line":29,"id":"bhEFtuJoXKLEfdk","type":"log","body":"0 1 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":168,"adjusted_line":29,"id":"JFWLsnXbuKyttZN","type":"log","body":"1 0 3 0 "}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":168,"adjusted_line":29,"id":"DrpStQyhujvBwIh","type":"log","body":"1 0 3 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":168,"adjusted_line":29,"id":"SVauhJvfloDsxaU","type":"log","body":"0 3 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":168,"adjusted_line":29,"id":"TDWXTPJPhrqaJtQ","type":"log","body":"0 3 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":168,"adjusted_line":29,"id":"EbfjoFnJZdKBxsY","type":"log","body":"0 0 0 0 "}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":168,"adjusted_line":29,"id":"xMaUWyBoRzxHNQY","type":"log","body":"0 0 0 0 "}***/
 
-/***dms_snippet_OUTPUT_JSON_4_{"line":171,"adjusted_line":32,"id":"fPvtmkqeVwzTQtI","type":"log","body":"Value of edge from C --> B: 3"}***/
+/***dms_snippet_OUTPUT_JSON_4_{"line":171,"adjusted_line":32,"id":"tLrIJmpzosQwNrd","type":"log","body":"Value of edge from C --> B: 3"}***/
+
+/***dms_text_START_5***
+An adjacency matrix can also be created by passing a matrix array as a parameter to the supply.
+***dms_text_END***/
+
+/***dms_snippet_START_6***/
+var preInitMatrix = supply('adjacency-matrix', {
+    parameters: {
+        nodeNames: ['A', 'B', 'C', 'D'],
+        initializedMatrix: [[ 0, 2, 0, 0 ],
+                            [ 0, 0, 3, 0 ],
+      											[ 0, 3, 0, 0 ],
+      											[ 0, 0, 0, 0 ]]
+    }
+});
+
+preInitMatrix.$on('initialize');
+
+dms.log('Print out loaded, pre-initialized matrix. Note that it will be the same as the matrix above.');
+matrixPrinter(preInitMatrix.$on('getMatrix').adjMatrix);
+/***dms_snippet_END***/
+
+/***dms_snippet_OUTPUT_JSON_6_{"line":203,"adjusted_line":13,"id":"PdclQEjZjtkpaJQ","type":"log","body":"Print out loaded, pre-initialized matrix. Note that it will be the same as the matrix above."}***/
+
+/***dms_snippet_OUTPUT_JSON_6_{"line":204,"adjusted_line":14,"id":"FFuykeJizxsKBok","type":"log","body":"0 2 0 0 "}***/
+
+/***dms_snippet_OUTPUT_JSON_6_{"line":204,"adjusted_line":14,"id":"CENtMUjtXGCbnEd","type":"log","body":"0 0 3 0 "}***/
+
+/***dms_snippet_OUTPUT_JSON_6_{"line":204,"adjusted_line":14,"id":"gGTeNOlkUHfmuaL","type":"log","body":"0 3 0 0 "}***/
+
+/***dms_snippet_OUTPUT_JSON_6_{"line":204,"adjusted_line":14,"id":"JWsjQIORJfzbrft","type":"log","body":"0 0 0 0 "}***/

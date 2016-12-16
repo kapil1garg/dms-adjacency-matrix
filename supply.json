@@ -1,7 +1,7 @@
 {
   "name": "adjacency-matrix",
   "description": "Create and maintain edges in an adjacency matrix",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "scope": "kapow",
   "repository": "https://github.com/kapil1garg/dms-adjacency-matrix",
   "author": "kapow",
@@ -32,7 +32,7 @@
     {
       "name": "value",
       "type": "number",
-      "description": "Numeric value to assign/increment/decrement to  edge (from, to)."
+      "description": "Numeric value to assign/increment/decrement to edge (from, to)."
     }
   ],
   "parameters": [
@@ -46,8 +46,17 @@
       "type": "boolean",
       "default": false,
       "description": "Boolean for if graph is an undirected graph."
+    },
+    {
+      "name": "initializedMatrix",
+      "type": "array",
+      "default": null,
+      "description": "Matrix to initialize to. Must have number rows = number columns = size of nodeNames with all numeric enteries."
     }
   ],
-  "supplies": {},
-  "breadcrumbs": {}
+  "supplies": {
+    "matrix": "1.1.0"
+  },
+  "breadcrumbs": {},
+  "path": "./dms_supplies"
 }

@@ -1,5 +1,6 @@
 module.exports = {
   $inject: function(supply, config){
+    var matrixSupply = supply('matrix');
     var nodes = {};
     var matrix = [];
     var initialized = false;
@@ -12,25 +13,83 @@ module.exports = {
       for (var currEdgeIndex in config.parameters.nodeNames) {
         var currEdgeName = config.parameters.nodeNames[currEdgeIndex];
         if (graphNodes.hasOwnProperty(currEdgeName)) {
-          return null;
+          throw 'All node names must be unique.'
         } else {
           graphNodes[currEdgeName] = numKeys;
           numKeys++;
         }
       }
 
-      // create matrix
-      initializedMatrix = new Array(numKeys);
-      for (var i in graphNodes) {
-        var currRow = new Array(numKeys);
-        for (var j in graphNodes) {
-          currRow[graphNodes[j]] = 0;
+      // check if initializedMatrix is provided
+      if (config.parameters.initializedMatrix) {
+        if (initializedMatrixIsValid()) {
+          initializedMatrix = config.parameters.initializedMatrix;
+        } else {
+          throw 'Given initializedMatrix is invalid. ' +
+                'It must have number rows = number columns = size of nodeNames with all numeric enteries. ' +
+                'Additionally, if undirected is true the initializedMatrix given must be symmetric.';
         }
-        initializedMatrix[graphNodes[i]] = currRow;
+      } else {
+        // else create matrix
+        initializedMatrix = new Array(numKeys);
+        for (var i in graphNodes) {
+          var currRow = new Array(numKeys);
+          for (var j in graphNodes) {
+            currRow[graphNodes[j]] = 0;
+          }
+          initializedMatrix[graphNodes[i]] = currRow;
+        }
       }
 
       // return graphNodes, initialized matrix
       return [graphNodes, initializedMatrix]
+    }
+
+    var initializedMatrixIsValid = function () {
+      // check to see if there are a >0 number of rows
+      if (!Array.isArray(config.parameters.initializedMatrix) ||
+          config.parameters.initializedMatrix.length == 0) {
+        return false;
+      }
+
+      var rowCount = config.parameters.initializedMatrix.length;
+      var columnCount = 0;
+
+      // check if all columns are the same length
+      for (var i in config.parameters.initializedMatrix) {
+        var currRow = config.parameters.initializedMatrix[i];
+
+        // check if currRow is an array of columns
+        if (!Array.isArray(currRow)) {
+          return false;
+        }
+
+        // check for column length equality
+        if (columnCount == 0) {
+          columnCount = currRow.length;
+        } else if (columnCount == currRow.length) {
+          // check if each element is a number
+          for (var j in currRow) {
+            var currElement = currRow[j];
+            if (typeof(currElement) != 'number') {
+              return false;
+            }
+          }
+        } else {
+          return false;
+        }
+      }
+
+      // if undirected is specified, make sure matrix is symmetric
+      if (config.parameters.undirected) {
+        var transposeMatrix = matrixSupply.$on('transpose', {matrixA: config.parameters.initializedMatrix}).output;
+        if (!matrixSupply.$on('equal', {matrixA: config.parameters.initializedMatrix, matrixB: transposeMatrix}).output) {
+          return false;
+        }
+      }
+
+      // finally, check to see if columnCount = rowCount = size nodeNames
+      return (rowCount == columnCount && rowCount == config.parameters.nodeNames.length);
     }
 
     return {
@@ -44,13 +103,13 @@ module.exports = {
   $main: function($, data, config, callback){
     // check if variables are initialized
     if (!$.initialized) {
-      var initOutput = $.initialize();
-      if (initOutput) {
+      try {
+        var initOutput = $.initialize();
         $.nodes = initOutput[0];
         $.matrix = initOutput[1];
         $.initialized = true;
-      } else {
-        return callback('Initialization failed: all node names must be unique.')
+      } catch (err) {
+        return callback('Initialization failed: ' + err);
       }
     }
 
@@ -70,14 +129,15 @@ module.exports = {
 
   $on: {
     initialize: function($, data, config, callback) {
-      var initOutput = $.initialize();
-      if (initOutput) {
+      try {
+        var initOutput = $.initialize();
         $.nodes = initOutput[0];
         $.matrix = initOutput[1];
         $.initialized = true;
+
         return callback(null);
-      } else {
-        return callback('Initialization failed: all node names must be unique.')
+      } catch (err) {
+        return callback('Initialization failed: ' + err);
       }
     },
     getMatrix: function($, data, config, callback){
