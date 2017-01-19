@@ -1,7 +1,7 @@
 {
   "name": "adjacency-matrix",
   "description": "Create and maintain edges in an adjacency matrix",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "scope": "kapow",
   "repository": "https://github.com/kapil1garg/dms-adjacency-matrix",
   "author": "kapow",
@@ -58,5 +58,11 @@
     "matrix": "1.1.0"
   },
   "breadcrumbs": {},
-  "path": "./dms_supplies"
+  "path": "./dms_supplies",
+  "dmsVersions": {
+    "prospector": "0.9.4",
+    "api": "0.8.3"
+  },
+  "notebook": "readme.json",
+  "viz": ""
 }
